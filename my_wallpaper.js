@@ -30,12 +30,12 @@ function wallpaper_background() {
   background(240, 255, 240); // Light honeydew green color
 }
 
-function drawFish(centerX, centerY, rotation, scaleFactor) {
+function drawFish(x, y, rotation, scaleFactor, centerX, centerY) {
   push();
-
-  translate(centerX, centerY);
+  
+  translate(x, y);
   rotate(radians(rotation));
-  translate(-centerX, -centerY);
+  translate(-width / 2, -height / 2);
 
   drawFinsBehind(centerX, centerY, scaleFactor);
 
@@ -131,8 +131,8 @@ function my_symbol() { // Do not rename this function. Treat this similarly to a
   let centerY = cellHeight / 2;
   let scaleFactor = 90 * (cellWidth / 800) * 0.92;
   
-  drawFish(centerX - cellWidth * 0.125 + cellWidth * 0.025, centerY - cellHeight * 0.2, 0, scaleFactor);
-  drawFish(centerX + cellWidth * 0.2, centerY - cellHeight * 0.125 + cellWidth * 0.025, 90, scaleFactor);
-  drawFish(centerX + cellWidth * 0.125 - cellWidth * 0.025, centerY + cellHeight * 0.2, 180, scaleFactor);
-  drawFish(centerX - cellWidth * 0.2, centerY + cellHeight * 0.125 - cellWidth * 0.025, 270, scaleFactor);
+  drawFish(-cellWidth * 0.125 + cellWidth * 0.025, -cellHeight * 0.2, 0, scaleFactor, centerX, centerY);
+  drawFish(cellWidth + cellWidth * 0.2, -cellHeight * 0.125 + cellWidth * 0.025, 90, scaleFactor, centerX, centerY);
+  drawFish(cellWidth + cellWidth * 0.125 - cellWidth * 0.025, cellHeight + cellHeight * 0.2, 180, scaleFactor, centerX, centerY);
+  drawFish(-cellWidth * 0.2, cellHeight + cellHeight * 0.125 - cellWidth * 0.025, 270, scaleFactor, centerX, centerY);
 }

@@ -286,12 +286,12 @@ function my_symbol() { // Do not rename this function. Treat this similarly to a
   ctx.fillRect(centerX - cellWidth / 2, centerY - cellHeight / 2, cellWidth, cellHeight);
 
   if(vinesConnected){
-    drawVine(0,0,0,cellHeight,cellWidth/4*3,0,cellWidth/4*3,cellHeight);
-    drawVine(cellWidth,0,cellWidth,cellHeight,cellWidth/4,0,cellWidth/4,cellHeight);
-    drawVine(cellWidth/2,0,cellWidth/2,0,cellWidth/2,cellHeight/2,cellWidth/2,cellHeight/2);
+    drawVine(0, 0, 0, cellHeight, cellWidth / 4 * 3, 0, cellWidth / 4 * 3, cellHeight);
+    drawVine(cellWidth, 0, cellWidth, cellHeight, cellWidth / 4, 0, cellWidth / 4, cellHeight);
+    drawVine(cellWidth / 2, 0, cellWidth / 2, 0, cellWidth / 2, cellHeight / 2, cellWidth / 2, cellHeight / 2);
   }
   else{
-    drawVine(0,0,0,cellHeight,cellWidth/4*3,0,cellWidth/4*3,cellHeight);
+    drawVine(0, 0, 0, cellHeight, cellWidth/ 4 * 3, 0, cellWidth / 4 * 3, cellHeight);
   }
 
   if(fishVertical){

@@ -1,3 +1,11 @@
+//CONDITIONAL VARIABLES
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+lilypadCut = 0; // define what angle the lilypad cut is made at in degrees
+innerPetalCount = 6; //define amount of petals for lotus inner layer
+outerPetalCount = 8; //define amount of petals for lotus outer layer
+
+
 let cellWidth = 200;
 let cellHeight = 200;
 let centerX = cellWidth / 2;
@@ -35,7 +43,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(20, 80, 130); // Light honeydew green color
+  background(0, 50, 70); // Light honeydew green color
 }
 
 function drawVine(x0,y0,x1,y1,x2,y2,x3,y3) {
@@ -65,8 +73,9 @@ function drawLilyPad() {
   fill(20, 80, 130); // Use the same color as your background
   beginShape();
   vertex(centerX, centerY); // Center of the lily pad
-  let cutoutAngle = PI / 6; // Size of the pizza slice cutout
-  for (let angle = -cutoutAngle; angle < cutoutAngle; angle += 0.01) {
+  let middleAngle = radians(lilypadCut); // Middle angle for the cutout
+  let cutoutAngle = radians(15); // 15 degrees to each side of the middle angle
+  for (let angle = middleAngle - cutoutAngle; angle <= middleAngle + cutoutAngle; angle += 0.01) {
       let x = centerX + padRadius * cos(angle);
       let y = centerY + padRadius * sin(angle);
       vertex(x, y);
@@ -74,6 +83,7 @@ function drawLilyPad() {
   vertex(centerX, centerY); // Close the shape back to the center
   endShape(CLOSE);
 }
+
 
 function drawFish(x, y, rotation) {
   push();
@@ -267,14 +277,19 @@ function drawEye(centerX, centerY, scaleFactor) {
 }
 
 function my_symbol() { // Do not rename this function. Treat this similarly to a Draw function
-  drawVine(cellWidth / 4,0,cellWidth / 2,cellHeight / 4,cellWidth / 4,cellHeight / 4 * 3,cellWidth / 2,cellHeight);
-  drawVine(cellWidth / 4 * 3,0,cellWidth,cellHeight / 4,cellWidth / 4 * 3,cellHeight / 4 * 3,cellWidth,cellHeight);
-  drawVine(0,cellHeight/2,cellWidth,cellHeight,0,0,cellWidth,cellHeight/2);
+  drawVine(0,0,0,cellHeight,cellWidth/4*3,0,cellWidth/4*3,cellHeight);
+  drawVine(cellWidth,0,cellWidth,cellHeight,cellWidth/4,0,cellWidth/4,cellHeight);
+  drawVine(cellWidth/2,0,cellWidth/2,0,cellWidth/2,cellHeight/2,cellWidth/2,cellHeight/2);
 
-  //drawFish(cellWidth * 0.43, cellHeight * 0.43, 0);
-  drawFish(cellWidth * 0.57, cellHeight * 0.43, 90);
-  //drawFish(cellWidth * 0.57, cellHeight * 0.57, 180);
-  drawFish(cellWidth * 0.43, cellHeight * 0.57, 270);
+
+  if(fishVertical){
+    drawFish(cellWidth * 0.43, cellHeight * 0.43, 0);
+    drawFish(cellWidth * 0.57, cellHeight * 0.57, 180);
+  }
+  if(fishHorizontal){
+    drawFish(cellWidth * 0.57, cellHeight * 0.43, 90);
+    drawFish(cellWidth * 0.43, cellHeight * 0.57, 270);
+  }  
 
   drawLilyPad();
   drawLotus();

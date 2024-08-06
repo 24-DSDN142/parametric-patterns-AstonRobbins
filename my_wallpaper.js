@@ -131,9 +131,8 @@ function my_symbol() { // Do not rename this function. Treat this similarly to a
   let centerY = cellHeight / 2;
   let scaleFactor = 90 * (cellWidth / 800) * 0.92;
   
-  // Draw four fish with rotation in the center of each cell
-  drawFish(centerX, centerY, 0, scaleFactor);
-  drawFish(centerX, centerY, 90, scaleFactor);
-  drawFish(centerX, centerY, 180, scaleFactor);
-  drawFish(centerX, centerY, 270, scaleFactor);
+  drawFish(centerX - cellWidth * 0.125 + cellWidth * 0.025, centerY - cellHeight * 0.2, 0, scaleFactor);
+  drawFish(centerX + cellWidth * 0.2, centerY - cellHeight * 0.125 + cellWidth * 0.025, 90, scaleFactor);
+  drawFish(centerX + cellWidth * 0.125 - cellWidth * 0.025, centerY + cellHeight * 0.2, 180, scaleFactor);
+  drawFish(centerX - cellWidth * 0.2, centerY + cellHeight * 0.125 - cellWidth * 0.025, 270, scaleFactor);
 }

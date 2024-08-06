@@ -1,4 +1,4 @@
-//CONDITIONAL VARIABLES
+//PARAMETERS
 fishHorizontal = true; //set to true for horizontal fish
 fishVertical = false; //set to true for vertical fish
 vinesConnected = false; //set to true to have more vines and full connections over all tiles
@@ -281,7 +281,7 @@ function my_symbol() { // Do not rename this function. Treat this similarly to a
   gradient.addColorStop(0, 'rgb(0,120,120)'); 
   //edge color
   gradient.addColorStop(1, 'rgb(0,50,50)');
-  
+
   ctx.fillStyle = gradient;
   ctx.fillRect(centerX - cellWidth / 2, centerY - cellHeight / 2, cellWidth, cellHeight);
 

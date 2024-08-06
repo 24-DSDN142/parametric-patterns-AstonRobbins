@@ -15,6 +15,12 @@ let controlPoints1, controlPoints2;
     { x: 4, y: -2 }
   ];
 
+  let cellWidth = pWallpaper.grid_settings.cell_width;
+  let cellHeight = pWallpaper.grid_settings.cell_height;
+  let centerX = cellWidth / 2;
+  let centerY = cellHeight / 2;
+  let scaleFactor = 90 * (cellWidth / 800) * 0.92;
+
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
@@ -125,12 +131,6 @@ function drawEye(centerX, centerY, scaleFactor) {
 function my_symbol() { // Do not rename this function. Treat this similarly to a Draw function
   noLoop();
 
-  let cellWidth = pWallpaper.grid_settings.cell_width;
-  let cellHeight = pWallpaper.grid_settings.cell_height;
-  let centerX = cellWidth / 2;
-  let centerY = cellHeight / 2;
-  let scaleFactor = 90 * (cellWidth / 800) * 0.92;
-  
   drawFish(-cellWidth * 0.125 + cellWidth * 0.025, -cellHeight * 0.2, 0, scaleFactor, centerX, centerY);
   drawFish(cellWidth + cellWidth * 0.2, -cellHeight * 0.125 + cellWidth * 0.025, 90, scaleFactor, centerX, centerY);
   drawFish(cellWidth + cellWidth * 0.125 - cellWidth * 0.025, cellHeight + cellHeight * 0.2, 180, scaleFactor, centerX, centerY);

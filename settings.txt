@@ -1,54 +1,424 @@
-You will need to fill out this file for hand in. 
-
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
-/////////////////////////////////
-
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+//PARAMETERS
+fishHorizontal = false; //set to true for horizontal fish
+fishVertical = true; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 6; //define amount of petals for lotus inner layer
+outerPetalCount = 12; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
 }
-
-/////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 6; //define amount of petals for lotus inner layer
+outerPetalCount = 12; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 3:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = true; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 8; //define amount of petals for lotus inner layer
+outerPetalCount = 16; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+function wallpaper_background() {
+  background(0, 50, 70); // Light honeydew green color
+}
+
+Wallpaper 4:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = true; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 4; //define amount of petals for lotus inner layer
+outerPetalCount = 8; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 5:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 4; //define amount of petals for lotus inner layer
+outerPetalCount = 8; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 6:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 0; //define amount of petals for lotus inner layer
+outerPetalCount = 20; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 7:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = false; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 20; //define amount of petals for lotus inner layer
+outerPetalCount = 8; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 8:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = true; //set to true for vertical fish
+vinesConnected = false; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 8; //define amount of petals for lotus inner layer
+outerPetalCount = 16; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
+}
+
+Wallpaper 9:
+
+/////////////////////////////////
+
+//PARAMETERS
+fishHorizontal = true; //set to true for horizontal fish
+fishVertical = true; //set to true for vertical fish
+vinesConnected = true; //set to true to have more vines and full connections over all tiles
+innerPetalCount = 8; //define amount of petals for lotus inner layer
+outerPetalCount = 16; //define amount of petals for lotus outer layer
+
+
+let cellWidth = 200;
+let cellHeight = 200;
+let centerX = cellWidth / 2;
+let centerY = cellHeight / 2;
+let controlPoints1, controlPoints2;
+
+  //first bezier curve control points
+  controlPoints1 = [
+    { x: 4, y: -2 },
+    { x: 2.89, y: -3.145 },
+    { x: 4.05, y: -4.41 },
+    { x: 2, y: -5 }
+  ];
+
+  //second bezier curve control points
+  controlPoints2 = [
+    { x: 2, y: -5 },
+    { x: 3.676, y: -5.934 },
+    { x: 5.5, y: -3 },
+    { x: 4, y: -2 }
+  ];
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); // Set this to false when you're ready to print
+
+  // Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 50;
+
+  angleMode(RADIANS);
 }
